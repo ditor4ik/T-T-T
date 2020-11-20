@@ -31,7 +31,7 @@ bool Check(unsigned char k[9], unsigned char Symb) {
     return End;
 }
 
-int Analys(unsigned char kMAP[9], unsigned char Symb1, unsigned char Symb2) {
+int Analys(unsigned char kMAP[9], unsigned char Symb1) {
     unsigned char MAP[3][3] = { 0 };
     for (int i = 0; i < 9; i++)
         MAP[i / 3][i % 3] = kMAP[i];
@@ -67,7 +67,7 @@ int Analys(unsigned char kMAP[9], unsigned char Symb1, unsigned char Symb2) {
                 return Result;
             }
     }
-    else if (w4 == 2) {
+    if (w4 == 2) {
         for (int k = 0; k < 3; k++)
             if (checkSymb(k, 2 - k, 0, MAP)) {
                 Result = (k + 1) * 10 + 2 - k + 1;
